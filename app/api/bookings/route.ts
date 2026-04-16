@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { adminDb, adminAuth } from '@/lib/firebase/admin';
 import { sendBookingConfirmation } from '@/lib/email';
+import { sendBookingSms } from '@/lib/sms';
 import { FieldValue } from 'firebase-admin/firestore';
 
 export async function POST(request: NextRequest) {
@@ -44,9 +45,17 @@ export async function POST(request: NextRequest) {
       tx.set(slotRef, { date, time, isBooked: true });
     });
 
-    sendBookingConfirmation({ name, email, service, date, time, bookingId }).catch(
+    // Email confirmation (fire-and-forget)
+    sendBookingConfirmation({ name, email, service, date, time, bookingId, car_model, phone }).catch(
       (err) => console.error('Email send failed:', err)
     );
+
+    // SMS confirmation if phone provided (fire-and-forget)
+    if (phone) {
+      sendBookingSms({ name, phone, service, date, time, bookingId, car_model }).catch(
+        (err) => console.error('SMS send failed:', err)
+      );
+    }
 
     return NextResponse.json({ id: bookingId }, { status: 201 });
   } catch (error: any) {
