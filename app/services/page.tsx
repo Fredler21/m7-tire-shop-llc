@@ -12,7 +12,7 @@ const services: Service[] = [
     name: 'Oil Change',
     description: 'Professional oil change with filter replacement and fluid check',
     startingPrice: 45,
-    image: 'https://images.unsplash.com/photo-1517457373614-b7152f800fd1?w=3840&q=95',
+    image: '/images/hero-oil-change.png',
     category: 'maintenance',
   },
   {
@@ -20,7 +20,7 @@ const services: Service[] = [
     name: 'Tire Services',
     description: 'Tire rotation, balancing, patching, and replacement services',
     startingPrice: 60,
-    image: 'https://images.unsplash.com/photo-1486521328584-c6fbb4f3b501?w=3840&q=95',
+    image: '/images/hero-tire-services.png',
     category: 'tires',
   },
   {
@@ -28,7 +28,7 @@ const services: Service[] = [
     name: 'Brake Repair',
     description: 'Complete brake system inspection and repair services',
     startingPrice: 150,
-    image: 'https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=3840&q=95',
+    image: '/images/hero-car-repair.png',
     category: 'repair',
   },
   {
@@ -36,7 +36,7 @@ const services: Service[] = [
     name: 'Engine Diagnostics',
     description: 'Advanced computer diagnostics for engine issues',
     startingPrice: 85,
-    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=3840&q=95',
+    image: '/images/hero-engine-diagnostics.png',
     category: 'diagnostics',
   },
   {
@@ -44,7 +44,7 @@ const services: Service[] = [
     name: 'Battery Replacement',
     description: 'Battery testing and replacement with warranty',
     startingPrice: 50,
-    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=3840&q=95',
+    image: '/images/hero-battery-replacement.png',
     category: 'parts',
   },
   {
@@ -52,7 +52,7 @@ const services: Service[] = [
     name: 'Body Shop',
     description: 'Dent removal, painting, and body panel replacement',
     startingPrice: 200,
-    image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=3840&q=95',
+    image: '/images/hero-body-shop.png',
     category: 'body',
   },
 ];

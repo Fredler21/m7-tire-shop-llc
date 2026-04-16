@@ -12,27 +12,27 @@ interface SlideImage {
 // High-quality 4K automotive images - all verified as relevant to car repair, tires, and body shop
 const HERO_IMAGES: SlideImage[] = [
   {
-    url: 'https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=3840&h=2160&fit=crop&q=95', // Professional mechanic working on car
+    url: '/images/hero-car-repair.png',
     alt: 'Professional mechanic with wrench',
     title: 'Expert Mechanics',
   },
   {
-    url: 'https://images.unsplash.com/photo-1486521328584-c6fbb4f3b501?w=3840&h=2160&fit=crop&q=95', // Tire installation/rotation
+    url: '/images/hero-oil-change.png',
+    alt: 'Mechanic performing oil change service',
+    title: 'Oil Change Service',
+  },
+  {
+    url: '/images/hero-tire-services.png',
     alt: 'Tire change and installation service',
     title: 'Tire Services',
   },
   {
-    url: 'https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=3840&h=2160&fit=crop&q=95', // Brake inspection
-    alt: 'Brake system inspection and repair',
-    title: 'Brake Repair',
+    url: '/images/hero-engine-diagnostics.png',
+    alt: 'Engine diagnostics using digital scanner',
+    title: 'Engine Diagnostics',
   },
   {
-    url: 'https://images.unsplash.com/photo-1517457373614-b7152f800fd1?w=3840&h=2160&fit=crop&q=95', // Oil change service
-    alt: 'Oil change and maintenance service',
-    title: 'Oil Change Service',
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=3840&h=2160&fit=crop&q=95', // Body shop work
+    url: '/images/hero-body-shop.png',
     alt: 'Professional body shop repairs',
     title: 'Body Shop Excellence',
   },

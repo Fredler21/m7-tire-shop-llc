@@ -13,21 +13,21 @@ const FEATURED_SERVICES = [
     name: 'Oil Change',
     description: 'Professional oil change with filter replacement',
     startingPrice: 45,
-    image: 'https://images.unsplash.com/photo-1517457373614-b7152f800fd1?w=3840&q=95',
+    image: '/images/hero-oil-change.png',
   },
   {
     id: '2',
     name: 'Tire Services',
     description: 'Tire rotation, balancing, and replacement',
     startingPrice: 60,
-    image: 'https://images.unsplash.com/photo-1486521328584-c6fbb4f3b501?w=3840&q=95',
+    image: '/images/hero-tire-services.png',
   },
   {
     id: '3',
     name: 'Brake Repair',
     description: 'Complete brake system inspection and repair',
     startingPrice: 150,
-    image: 'https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=3840&q=95',
+    image: '/images/hero-car-repair.png',
   },
 ];
 
