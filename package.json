@@ -6,15 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "seed:slots": "node scripts/seed-slots.mjs"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "axios": "^1.15.0",
+    "firebase": "^12.12.0",
+    "firebase-admin": "^13.8.0",
     "next": "16.2.4",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-hot-toast": "^2.6.0",
+    "resend": "^6.12.0",
     "swiper": "^12.1.3"
   },
   "devDependencies": {

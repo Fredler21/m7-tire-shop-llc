@@ -9,6 +9,7 @@ import { useSearchParams } from 'next/navigation';
 function BookingContent() {
   const searchParams = useSearchParams();
   const serviceParam = searchParams.get('service');
+  const carParam = searchParams.get('car');
 
   return (
     <div className="pt-28 sm:pt-40 pb-16 sm:pb-32">
@@ -30,7 +31,7 @@ function BookingContent() {
             <div className="space-y-8">
               {[
                 { icon: 'check_circle', text: 'Appointments confirmed within 24 hours' },
-                { icon: 'check_circle', text: 'Email and SMS confirmation sent' },
+                { icon: 'check_circle', text: 'Email confirmation sent automatically' },
                 { icon: 'check_circle', text: 'Please arrive 10 minutes early' },
                 { icon: 'check_circle', text: 'Cancellations must be made 24 hours in advance' },
                 { icon: 'check_circle', text: 'For emergencies, call us directly' },
@@ -53,7 +54,7 @@ function BookingContent() {
 
           {/* Right: form */}
           <div className="glass-card p-6 sm:p-10 rounded-2xl">
-            <BookingForm initialService={serviceParam || ''} />
+            <BookingForm initialService={serviceParam || ''} initialCarModel={carParam || ''} />
           </div>
         </div>
       </div>
