@@ -46,9 +46,9 @@ export default function Footer() {
         <div className="space-y-6">
           <h6 className="text-[#00daf8] text-sm tracking-wide uppercase font-bold">Contact</h6>
           <p className="text-slate-400 text-sm leading-relaxed">
-            123 Main Street<br />
-            City, State 12345<br /><br />
-            info@m7tireshop.com<br />
+            2242 Rodman St<br />
+            Hollywood, FL 33020<br /><br />
+            Fadoulmer80@gmail.com<br />
             (555) 123-4567
           </p>
           <div>
@@ -62,7 +62,7 @@ export default function Footer() {
 
       <div className="border-t border-slate-900 py-6 sm:py-8 px-6 sm:px-12 text-center">
         <p className="text-xs tracking-wide uppercase text-slate-500">
-          © 2025 M7 TIRE SHOP LLC. ALL RIGHTS RESERVED.
+          © 2026 M7 TIRE SHOP LLC. ALL RIGHTS RESERVED.
         </p>
       </div>
     </footer>

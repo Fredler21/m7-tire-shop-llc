@@ -26,8 +26,8 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-8 mb-12 sm:mb-20">
           {[
             { icon: 'call', title: 'Call Us', info: '(555) 123-4567', sub: 'Mon – Fri: 8AM – 6PM' },
-            { icon: 'mail', title: 'Email Us', info: 'info@m7tireshop.com', sub: 'We reply within 24 hours' },
-            { icon: 'location_on', title: 'Visit Us', info: '123 Main Street', sub: 'City, State 12345' },
+            { icon: 'mail', title: 'Email Us', info: 'Fadoulmer80@gmail.com', sub: 'We reply within 24 hours' },
+            { icon: 'location_on', title: 'Visit Us', info: '2242 Rodman St', sub: 'Hollywood, FL 33020' },
           ].map((item) => (
             <div key={item.icon} className="bg-surface-container-low p-10 rounded-2xl text-center border border-outline-variant/10 group hover:border-tertiary/20 transition-all">
               <div className="w-16 h-16 rounded-2xl glass-card flex items-center justify-center text-tertiary mx-auto mb-6 group-hover:scale-110 transition-transform">
@@ -47,7 +47,7 @@ export default function ContactPage() {
             <div className="rounded-2xl overflow-hidden border border-outline-variant/20">
               <iframe
                 className="w-full h-64 sm:h-96"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.1234567890!2d-74.0060!3d40.7128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjAiTiA3NMKwMDAnMjEuNiJX!5e0!3m2!1sen!2sus!4v1234567890"
+              src="https://maps.google.com/maps?q=2242+Rodman+St,+Hollywood,+FL+33020&output=embed"
                 allowFullScreen={false}
                 loading="lazy"
               ></iframe>
