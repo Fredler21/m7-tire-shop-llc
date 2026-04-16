@@ -6,36 +6,15 @@ import Link from 'next/link';
 interface SlideImage {
   url: string;
   alt: string;
-  title: string;
+  label: string;
 }
 
-// High-quality 4K automotive images - all verified as relevant to car repair, tires, and body shop
 const HERO_IMAGES: SlideImage[] = [
-  {
-    url: '/images/hero-car-repair.png',
-    alt: 'Professional mechanic with wrench',
-    title: 'Expert Mechanics',
-  },
-  {
-    url: '/images/hero-oil-change.png',
-    alt: 'Mechanic performing oil change service',
-    title: 'Oil Change Service',
-  },
-  {
-    url: '/images/hero-tire-services.png',
-    alt: 'Tire change and installation service',
-    title: 'Tire Services',
-  },
-  {
-    url: '/images/hero-engine-diagnostics.png',
-    alt: 'Engine diagnostics using digital scanner',
-    title: 'Engine Diagnostics',
-  },
-  {
-    url: '/images/hero-body-shop.png',
-    alt: 'Professional body shop repairs',
-    title: 'Body Shop Excellence',
-  },
+  { url: '/images/hero-car-repair.png', alt: 'Professional mechanic at work', label: 'Expert Mechanics' },
+  { url: '/images/hero-oil-change.png', alt: 'Oil change service', label: 'Oil Change' },
+  { url: '/images/hero-tire-services.png', alt: 'Tire installation service', label: 'Tire Services' },
+  { url: '/images/hero-engine-diagnostics.png', alt: 'Engine diagnostics', label: 'Advanced Diagnostics' },
+  { url: '/images/hero-body-shop.png', alt: 'Body shop repairs', label: 'Body Shop' },
 ];
 
 export default function HeroSlider() {
@@ -47,7 +26,7 @@ export default function HeroSlider() {
 
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % HERO_IMAGES.length);
-    }, 5000); // Change image every 5 seconds
+    }, 2000); // Change image every 2 seconds
 
     return () => clearInterval(interval);
   }, [isAutoPlay]);
@@ -56,25 +35,25 @@ export default function HeroSlider() {
     setCurrentSlide(index);
     setIsAutoPlay(false);
     // Resume autoplay after 10 seconds
-    setTimeout(() => setIsAutoPlay(true), 10000);
+    setTimeout(() => setIsAutoPlay(true), 6000);
   };
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % HERO_IMAGES.length);
     setIsAutoPlay(false);
-    setTimeout(() => setIsAutoPlay(true), 10000);
+    setTimeout(() => setIsAutoPlay(true), 6000);
   };
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + HERO_IMAGES.length) % HERO_IMAGES.length);
     setIsAutoPlay(false);
-    setTimeout(() => setIsAutoPlay(true), 10000);
+    setTimeout(() => setIsAutoPlay(true), 6000);
   };
 
   return (
-    <div className="relative w-full h-screen pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Image Slides */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-0">
         {HERO_IMAGES.map((image, index) => (
           <div
             key={index}
@@ -82,89 +61,63 @@ export default function HeroSlider() {
               index === currentSlide ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            <img
-              src={image.url}
-              alt={image.alt}
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
+            <img src={image.url} alt={image.alt} className="w-full h-full object-cover" loading="lazy" />
           </div>
         ))}
+        {/* Gradient overlays */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0b1326] via-[#0b1326]/85 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0b1326] via-transparent to-transparent"></div>
       </div>
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/60 z-10"></div>
-
       {/* Hero Content */}
-      <div className="relative h-full flex flex-col justify-center items-center text-center px-4 max-w-4xl mx-auto z-20">
-        <h1 className="text-6xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg">
-          M7 Tire Shop <span className="text-orange-500">LLC</span>
+      <div className="relative z-10 w-full max-w-[1440px] px-8 mx-auto pt-24 flex flex-col items-start gap-8">
+        <span className="text-[#00daf8] font-bold tracking-[0.2em] uppercase text-sm flex items-center gap-3">
+          <span className="w-12 h-[2px] bg-[#00daf8] inline-block"></span>
+          Professional Auto Care
+        </span>
+        <h1 className="text-6xl md:text-8xl font-bold max-w-4xl tracking-tight leading-[0.95]">
+          Reliable Auto Repair.<br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-tertiary">
+            Done Right.
+          </span>
         </h1>
-        <p className="text-2xl md:text-3xl text-gray-200 mb-8 drop-shadow-md">
-          Professional Automotive Services You Can Trust
+        <p className="text-on-surface-variant text-xl md:text-2xl max-w-2xl leading-relaxed font-light">
+          Oil change, tire services, diagnostics, and body work — all executed by our expert technicians at fair prices.
         </p>
-        <p className="text-lg text-gray-300 mb-12 max-w-xl drop-shadow-md">
-          Expert mechanics. Fair prices. Quality workmanship. Your car deserves the best.
-        </p>
-
-        <div className="flex flex-col md:flex-row gap-4">
+        <div className="flex flex-col sm:flex-row gap-6 mt-4">
           <Link
             href="/booking"
-            className="bg-orange-500 hover:bg-orange-600 text-white text-lg font-bold px-8 py-4 rounded-lg transition duration-300 transform hover:scale-105 drop-shadow-lg"
+            className="bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed px-10 py-5 rounded-full font-extrabold text-lg shadow-xl hover:scale-[1.02] active:scale-95 transition-all text-center"
           >
-            Book Now
+            BOOK APPOINTMENT
           </Link>
           <Link
             href="/services"
-            className="border-2 border-white hover:bg-white hover:text-black text-white text-lg font-bold px-8 py-4 rounded-lg transition duration-300 drop-shadow-lg"
+            className="glass-card text-on-surface px-10 py-5 rounded-full font-bold text-lg hover:bg-[#2d3449]/60 transition-all text-center"
           >
-            View Services
+            VIEW SERVICES
           </Link>
         </div>
       </div>
 
-      {/* Previous Button */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-30 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition duration-200"
-        aria-label="Previous slide"
-      >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-        </svg>
-      </button>
-
-      {/* Next Button */}
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-30 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition duration-200"
-        aria-label="Next slide"
-      >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
-
       {/* Dot Indicators */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-2 z-20">
         {HERO_IMAGES.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition duration-300 ${
-              index === currentSlide
-                ? 'bg-orange-500 w-8'
-                : 'bg-white/50 hover:bg-white/75'
+            className={`h-1.5 rounded-full transition-all duration-300 ${
+              index === currentSlide ? 'bg-[#00daf8] w-8' : 'bg-white/30 hover:bg-white/50 w-4'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
 
-      {/* Slide Counter */}
-      <div className="absolute top-32 right-6 z-30 bg-black/50 text-white px-4 py-2 rounded-lg text-sm">
-        {currentSlide + 1} / {HERO_IMAGES.length}
+      {/* Slide label */}
+      <div className="absolute bottom-10 right-8 z-20 text-xs text-on-surface-variant uppercase tracking-widest">
+        {HERO_IMAGES[currentSlide].label}
       </div>
-    </div>
+    </section>
   );
 }

@@ -7,7 +7,7 @@ interface ServiceCardProps {
   name: string;
   description: string;
   startingPrice: number;
-  image: string;
+  icon: string;
 }
 
 export default function ServiceCard({
@@ -15,33 +15,25 @@ export default function ServiceCard({
   name,
   description,
   startingPrice,
-  image,
+  icon,
 }: ServiceCardProps) {
   return (
-    <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300">
-      <div className="relative h-48">
-        <img
-          src={image}
-          alt={name}
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+    <div className="group bg-surface-container-low p-10 rounded-2xl hover:bg-surface-container-high transition-all duration-500 relative overflow-hidden border border-outline-variant/10 hover:border-tertiary/20">
+      {/* Ghost icon background */}
+      <div className="absolute -right-4 -bottom-4 opacity-10 group-hover:opacity-20 transition-opacity">
+        <span className="material-symbols-outlined text-[120px] text-on-surface">{icon}</span>
       </div>
-      <div className="p-6">
-        <h3 className="text-xl font-bold text-white mb-2">{name}</h3>
-        <p className="text-gray-300 text-sm mb-4">{description}</p>
-        <div className="flex justify-between items-center">
-          <span className="text-xl font-bold text-orange-500">
-            From ${startingPrice}
-          </span>
-          <Link
-            href={`/booking?service=${name}`}
-            className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg font-semibold transition duration-200"
-          >
-            Book
-          </Link>
-        </div>
-      </div>
+
+      <span className="material-symbols-outlined text-tertiary text-4xl mb-8 block">{icon}</span>
+      <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight">{name}</h3>
+      <p className="text-on-secondary-container mb-2 leading-relaxed text-sm">{description}</p>
+      <p className="text-tertiary font-bold text-lg mb-8">From ${startingPrice}</p>
+      <Link
+        href={`/booking?service=${encodeURIComponent(name)}`}
+        className="text-tertiary font-bold tracking-wider uppercase text-sm flex items-center gap-2 hover:translate-x-2 transition-transform"
+      >
+        Book Now <span className="material-symbols-outlined text-lg">arrow_forward</span>
+      </Link>
     </div>
   );
 }

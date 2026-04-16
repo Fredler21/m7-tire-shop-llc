@@ -89,103 +89,127 @@ export default function BookingForm({ initialService = '' }: BookingFormProps) {
   const minDate = tomorrow.toISOString().split('T')[0];
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <input
-          type="text"
-          name="name"
-          placeholder="Full Name *"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-700 focus:border-orange-500 focus:outline-none"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email Address *"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-700 focus:border-orange-500 focus:outline-none"
-        />
+    <form onSubmit={handleSubmit} className="space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-2">
+          <label className="text-xs font-bold uppercase tracking-widest text-tertiary">Full Name *</label>
+          <input
+            type="text"
+            name="name"
+            placeholder="John Smith"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            className="w-full bg-transparent border-0 border-b border-outline-variant/50 focus:border-tertiary focus:outline-none text-on-surface pb-2 transition-all placeholder:text-on-secondary-container/50"
+          />
+        </div>
+        <div className="space-y-2">
+          <label className="text-xs font-bold uppercase tracking-widest text-tertiary">Email Address *</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="john@example.com"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="w-full bg-transparent border-0 border-b border-outline-variant/50 focus:border-tertiary focus:outline-none text-on-surface pb-2 transition-all placeholder:text-on-secondary-container/50"
+          />
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <input
-          type="tel"
-          name="phone"
-          placeholder="Phone Number *"
-          value={formData.phone}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-700 focus:border-orange-500 focus:outline-none"
-        />
-        <input
-          type="text"
-          name="carModel"
-          placeholder="Car Model (e.g., Honda Civic) *"
-          value={formData.carModel}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-700 focus:border-orange-500 focus:outline-none"
-        />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-2">
+          <label className="text-xs font-bold uppercase tracking-widest text-tertiary">Phone Number *</label>
+          <input
+            type="tel"
+            name="phone"
+            placeholder="(555) 123-4567"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+            className="w-full bg-transparent border-0 border-b border-outline-variant/50 focus:border-tertiary focus:outline-none text-on-surface pb-2 transition-all placeholder:text-on-secondary-container/50"
+          />
+        </div>
+        <div className="space-y-2">
+          <label className="text-xs font-bold uppercase tracking-widest text-tertiary">Vehicle Model *</label>
+          <input
+            type="text"
+            name="carModel"
+            placeholder="e.g., Honda Civic 2020"
+            value={formData.carModel}
+            onChange={handleChange}
+            required
+            className="w-full bg-transparent border-0 border-b border-outline-variant/50 focus:border-tertiary focus:outline-none text-on-surface pb-2 transition-all placeholder:text-on-secondary-container/50"
+          />
+        </div>
       </div>
 
-      <select
-        name="service"
-        value={formData.service}
-        onChange={handleChange}
-        className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-700 focus:border-orange-500 focus:outline-none"
-      >
-        {SERVICES.map((service) => (
-          <option key={service} value={service}>
-            {service}
-          </option>
-        ))}
-      </select>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <input
-          type="date"
-          name="date"
-          value={formData.date}
-          onChange={handleChange}
-          min={minDate}
-          required
-          className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-700 focus:border-orange-500 focus:outline-none"
-        />
+      <div className="space-y-2">
+        <label className="text-xs font-bold uppercase tracking-widest text-tertiary">Select Service *</label>
         <select
-          name="time"
-          value={formData.time}
+          name="service"
+          value={formData.service}
           onChange={handleChange}
-          required
-          className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-700 focus:border-orange-500 focus:outline-none"
+          className="w-full bg-surface-container border-0 border-b border-outline-variant/50 focus:border-tertiary focus:outline-none text-on-surface pb-2 transition-all"
         >
-          <option value="">Select Time</option>
-          {AVAILABLE_TIMES.map((time) => (
-            <option key={time} value={time}>
-              {time}
+          {SERVICES.map((service) => (
+            <option key={service} value={service} className="bg-surface-container">
+              {service}
             </option>
           ))}
         </select>
       </div>
 
-      <textarea
-        name="notes"
-        placeholder="Additional Notes (Optional)"
-        value={formData.notes}
-        onChange={handleChange}
-        rows={4}
-        className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-700 focus:border-orange-500 focus:outline-none resize-none"
-      ></textarea>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-2">
+          <label className="text-xs font-bold uppercase tracking-widest text-tertiary">Preferred Date *</label>
+          <input
+            type="date"
+            name="date"
+            value={formData.date}
+            onChange={handleChange}
+            min={minDate}
+            required
+            className="w-full bg-transparent border-0 border-b border-outline-variant/50 focus:border-tertiary focus:outline-none text-on-surface pb-2 transition-all"
+          />
+        </div>
+        <div className="space-y-2">
+          <label className="text-xs font-bold uppercase tracking-widest text-tertiary">Preferred Time *</label>
+          <select
+            name="time"
+            value={formData.time}
+            onChange={handleChange}
+            required
+            className="w-full bg-surface-container border-0 border-b border-outline-variant/50 focus:border-tertiary focus:outline-none text-on-surface pb-2 transition-all"
+          >
+            <option value="" className="bg-surface-container">Select Time</option>
+            {AVAILABLE_TIMES.map((time) => (
+              <option key={time} value={time} className="bg-surface-container">
+                {time}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+
+      <div className="space-y-2">
+        <label className="text-xs font-bold uppercase tracking-widest text-tertiary">Additional Notes</label>
+        <textarea
+          name="notes"
+          placeholder="Describe the issue or any special requests..."
+          value={formData.notes}
+          onChange={handleChange}
+          rows={4}
+          className="w-full bg-transparent border border-outline-variant/30 focus:border-tertiary focus:outline-none text-on-surface p-3 rounded-xl transition-all resize-none placeholder:text-on-secondary-container/50 mt-2"
+        ></textarea>
+      </div>
 
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-orange-500 hover:bg-orange-600 disabled:bg-gray-600 text-white font-bold py-3 rounded-lg transition duration-200"
+        className="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed py-5 rounded-full font-bold uppercase tracking-widest shadow-lg hover:shadow-tertiary/20 transition-all disabled:opacity-50"
       >
-        {loading ? 'Processing...' : 'Book Appointment'}
+        {loading ? 'Processing...' : 'Confirm Appointment'}
       </button>
     </form>
   );
