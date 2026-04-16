@@ -14,6 +14,7 @@ const HERO_IMAGES: SlideImage[] = [
   { url: '/images/hero-oil-change.png', alt: 'Oil change service', label: 'Oil Change' },
   { url: '/images/hero-tire-services.png', alt: 'Tire installation service', label: 'Tire Services' },
   { url: '/images/hero-engine-diagnostics.png', alt: 'Engine diagnostics', label: 'Advanced Diagnostics' },
+  { url: '/images/hero-battery-replacement.png', alt: 'Battery replacement service', label: 'Battery Service' },
   { url: '/images/hero-body-shop.png', alt: 'Body shop repairs', label: 'Body Shop' },
 ];
 
@@ -61,7 +62,7 @@ export default function HeroSlider() {
               index === currentSlide ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            <img src={image.url} alt={image.alt} className="w-full h-full object-cover" loading="lazy" />
+            <img src={image.url} alt={image.alt} className="w-full h-full object-cover" loading="eager" />
           </div>
         ))}
         {/* Gradient overlays */}
