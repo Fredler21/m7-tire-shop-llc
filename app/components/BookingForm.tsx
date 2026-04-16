@@ -95,6 +95,8 @@ export default function BookingForm({ initialService = '', initialCarModel = '' 
     }
   };
 
+  const [confirmed, setConfirmed] = useState<{ id: string; service: string; date: string; time: string; name: string } | null>(null);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.time) { toast.error('Please select a time slot'); return; }
@@ -107,7 +109,7 @@ export default function BookingForm({ initialService = '', initialCarModel = '' 
       });
       const result = await response.json();
       if (response.ok) {
-        toast.success('Booking confirmed! Check your email for confirmation.');
+        setConfirmed({ id: result.id, service: formData.service, date: formData.date, time: formData.time, name: formData.name });
         setFormData({ name: '', email: '', phone: '', car_model: '', service: SERVICES[0], date: '', time: '', notes: '' });
         setSlots([]);
         setSelectedVehicleId('');
@@ -117,6 +119,71 @@ export default function BookingForm({ initialService = '', initialCarModel = '' 
     } catch { toast.error('Network error. Please try again.'); }
     finally { setLoading(false); }
   };
+
+  if (confirmed) {
+    const formattedDate = new Date(confirmed.date + 'T12:00:00').toLocaleDateString('en-US', {
+      weekday: 'long', month: 'long', day: 'numeric', year: 'numeric',
+    });
+    return (
+      <div className="text-center space-y-8 py-6">
+        {/* Checkmark */}
+        <div className="relative mx-auto w-24 h-24">
+          <div className="absolute inset-0 rounded-full bg-tertiary/10 animate-ping" />
+          <div className="relative w-24 h-24 rounded-full bg-tertiary/20 flex items-center justify-center">
+            <span className="material-symbols-outlined text-tertiary text-5xl" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+          </div>
+        </div>
+
+        <div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-on-surface mb-2">Booking Confirmed!</h2>
+          <p className="text-on-surface-variant text-sm">
+            Thank you for choosing M7 Tire Shop, <span className="text-on-surface font-semibold">{confirmed.name}</span>!<br />
+            A confirmation email is on its way to you.
+          </p>
+        </div>
+
+        {/* Booking details card */}
+        <div className="bg-surface-container rounded-2xl border border-outline-variant/20 p-6 text-left space-y-4">
+          <div className="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+            <span className="text-xs font-bold uppercase tracking-widest text-tertiary">Booking Reference</span>
+            <span className="font-mono font-bold text-on-surface text-sm tracking-widest bg-tertiary/10 px-3 py-1 rounded-full">
+              #{confirmed.id.slice(0, 8).toUpperCase()}
+            </span>
+          </div>
+          <div className="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-1">Service</p>
+              <p className="text-on-surface font-semibold">{confirmed.service}</p>
+            </div>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-1">Time</p>
+              <p className="text-on-surface font-semibold">{confirmed.time}</p>
+            </div>
+            <div className="col-span-2">
+              <p className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-1">Date</p>
+              <p className="text-on-surface font-semibold">{formattedDate}</p>
+            </div>
+            <div className="col-span-2">
+              <p className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-1">Location</p>
+              <p className="text-on-surface font-semibold">2242 Rodman St, Hollywood, FL 33020</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-surface-container-low rounded-xl p-4 text-sm text-on-surface-variant border border-outline-variant/10">
+          <span className="material-symbols-outlined text-tertiary text-base align-middle mr-1" style={{ fontVariationSettings: "'FILL' 1" }}>info</span>
+          Please arrive <strong className="text-on-surface">10 minutes early</strong>. We'll confirm your appointment within 24 hours.
+        </div>
+
+        <button
+          onClick={() => setConfirmed(null)}
+          className="w-full border border-outline-variant/30 text-on-surface py-3 rounded-full font-semibold text-sm hover:border-tertiary/50 hover:text-tertiary transition-all"
+        >
+          Book Another Appointment
+        </button>
+      </div>
+    );
+  }
 
   const availableSlots = slots.filter((s) => !s.is_booked);
 
