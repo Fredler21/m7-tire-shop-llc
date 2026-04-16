@@ -2,10 +2,10 @@
 
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
+import HeroSlider from '@/app/components/HeroSlider';
 import ServiceCard from '@/app/components/ServiceCard';
 import ReviewsSection from '@/app/components/ReviewsSection';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 
 const FEATURED_SERVICES = [
   {
@@ -32,53 +32,12 @@ const FEATURED_SERVICES = [
 ];
 
 export default function Home() {
-  const [heroImage, setHeroImage] = useState('');
-
-  useEffect(() => {
-    // Set hero image
-    setHeroImage('https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=3840&q=95');
-  }, []);
-
   return (
     <div className="min-h-screen bg-gray-900">
       <Header />
 
-      {/* Hero Section */}
-      <div className="relative w-full h-screen pt-20">
-        <img
-          src={heroImage}
-          alt="Hero"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/60"></div>
-
-        <div className="relative h-full flex flex-col justify-center items-center text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-6xl md:text-7xl font-bold text-white mb-6">
-            M7 Tire Shop <span className="text-orange-500">LLC</span>
-          </h1>
-          <p className="text-2xl md:text-3xl text-gray-200 mb-8">
-            Professional Automotive Services You Can Trust
-          </p>
-          <p className="text-lg text-gray-300 mb-12 max-w-xl">
-            Expert mechanics. Fair prices. Quality workmanship. Your car deserves the best.
-          </p>
-
-          <div className="flex flex-col md:flex-row gap-4">
-            <Link
-              href="/booking"
-              className="bg-orange-500 hover:bg-orange-600 text-white text-lg font-bold px-8 py-4 rounded-lg transition duration-300 transform hover:scale-105"
-            >
-              Book Now
-            </Link>
-            <Link
-              href="/services"
-              className="border-2 border-white hover:bg-white hover:text-black text-white text-lg font-bold px-8 py-4 rounded-lg transition duration-300"
-            >
-              View Services
-            </Link>
-          </div>
-        </div>
-      </div>
+      {/* Hero Slider Section */}
+      <HeroSlider />
 
       {/* Services Preview */}
       <section className="py-20 px-4 bg-gray-900">
