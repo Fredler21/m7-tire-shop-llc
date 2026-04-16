@@ -11,19 +11,19 @@ function BookingContent() {
   const serviceParam = searchParams.get('service');
 
   return (
-    <div className="pt-40 pb-32">
-      <div className="max-w-[1440px] mx-auto px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+    <div className="pt-28 sm:pt-40 pb-16 sm:pb-32">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-24 items-start">
           {/* Left: info */}
           <div>
-            <span className="text-tertiary font-bold tracking-[0.2em] uppercase text-sm flex items-center gap-3 mb-8">
-              <span className="w-12 h-[2px] bg-tertiary inline-block"></span>
+            <span className="text-tertiary font-bold tracking-[0.2em] uppercase text-xs sm:text-sm flex items-center gap-3 mb-6 sm:mb-8">
+              <span className="w-8 sm:w-12 h-[2px] bg-tertiary inline-block"></span>
               Schedule Your Visit
             </span>
-            <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-4 sm:mb-6">
               BOOK AN<br />APPOINTMENT
             </h1>
-            <p className="text-on-secondary-container text-lg mb-12 max-w-md">
+            <p className="text-on-secondary-container text-base sm:text-lg mb-8 sm:mb-12 max-w-md">
               Select your service and preferred time. Our team will confirm your booking within 24 hours.
             </p>
 
@@ -52,7 +52,7 @@ function BookingContent() {
           </div>
 
           {/* Right: form */}
-          <div className="glass-card p-10 rounded-2xl">
+          <div className="glass-card p-6 sm:p-10 rounded-2xl">
             <BookingForm initialService={serviceParam || ''} />
           </div>
         </div>

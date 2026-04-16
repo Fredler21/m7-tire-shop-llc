@@ -71,30 +71,30 @@ export default function HeroSlider() {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 w-full max-w-[1440px] px-8 mx-auto pt-24 flex flex-col items-start gap-8">
-        <span className="text-[#00daf8] font-bold tracking-[0.2em] uppercase text-sm flex items-center gap-3">
-          <span className="w-12 h-[2px] bg-[#00daf8] inline-block"></span>
+      <div className="relative z-10 w-full max-w-[1440px] px-4 sm:px-8 mx-auto pt-28 sm:pt-24 flex flex-col items-start gap-6 sm:gap-8">
+        <span className="text-[#00daf8] font-bold tracking-[0.2em] uppercase text-xs sm:text-sm flex items-center gap-2 sm:gap-3">
+          <span className="w-8 sm:w-12 h-[2px] bg-[#00daf8] inline-block"></span>
           Professional Auto Care
         </span>
-        <h1 className="text-6xl md:text-8xl font-bold max-w-4xl tracking-tight leading-[0.95]">
+        <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold max-w-4xl tracking-tight leading-[0.95]">
           Reliable Auto Repair.<br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-tertiary">
             Done Right.
           </span>
         </h1>
-        <p className="text-on-surface-variant text-xl md:text-2xl max-w-2xl leading-relaxed font-light">
+        <p className="text-on-surface-variant text-base sm:text-xl md:text-2xl max-w-2xl leading-relaxed font-light">
           Oil change, tire services, diagnostics, and body work — all executed by our expert technicians at fair prices.
         </p>
-        <div className="flex flex-col sm:flex-row gap-6 mt-4">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 mt-2 sm:mt-4 w-full sm:w-auto">
           <Link
             href="/booking"
-            className="bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed px-10 py-5 rounded-full font-extrabold text-lg shadow-xl hover:scale-[1.02] active:scale-95 transition-all text-center"
+            className="bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed px-8 sm:px-10 py-4 sm:py-5 rounded-full font-extrabold text-base sm:text-lg shadow-xl hover:scale-[1.02] active:scale-95 transition-all text-center"
           >
             BOOK APPOINTMENT
           </Link>
           <Link
             href="/services"
-            className="glass-card text-on-surface px-10 py-5 rounded-full font-bold text-lg hover:bg-[#2d3449]/60 transition-all text-center"
+            className="glass-card text-on-surface px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:bg-[#2d3449]/60 transition-all text-center"
           >
             VIEW SERVICES
           </Link>
@@ -102,7 +102,7 @@ export default function HeroSlider() {
       </div>
 
       {/* Dot Indicators */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+      <div className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 flex gap-2 z-20">
         {HERO_IMAGES.map((_, index) => (
           <button
             key={index}
@@ -116,7 +116,7 @@ export default function HeroSlider() {
       </div>
 
       {/* Slide label */}
-      <div className="absolute bottom-10 right-8 z-20 text-xs text-on-surface-variant uppercase tracking-widest">
+      <div className="hidden sm:block absolute bottom-10 right-8 z-20 text-xs text-on-surface-variant uppercase tracking-widest">
         {HERO_IMAGES[currentSlide].label}
       </div>
     </section>

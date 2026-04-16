@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className="w-full rounded-t-[3rem] mt-20 bg-[#020617]">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start px-12 py-24 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start px-6 sm:px-12 py-16 sm:py-24 max-w-7xl mx-auto">
         {/* Brand */}
         <div className="space-y-6">
           <div className="flex items-center gap-3">
@@ -60,7 +60,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-slate-900 py-8 px-12 text-center">
+      <div className="border-t border-slate-900 py-6 sm:py-8 px-6 sm:px-12 text-center">
         <p className="text-xs tracking-wide uppercase text-slate-500">
           © 2025 M7 TIRE SHOP LLC. ALL RIGHTS RESERVED.
         </p>

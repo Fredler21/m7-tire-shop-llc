@@ -26,10 +26,10 @@ const reviews = [
 
 export default function ReviewsSection() {
   return (
-    <section className="py-32 bg-surface">
-      <div className="max-w-[1440px] mx-auto px-8">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl font-bold tracking-tight mb-4 uppercase">What Our Customers Say</h2>
+    <section className="py-16 sm:py-32 bg-surface">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
+        <div className="text-center mb-10 sm:mb-20">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4 uppercase">What Our Customers Say</h2>
           <div className="h-1 w-20 bg-tertiary mx-auto"></div>
         </div>
 
@@ -37,9 +37,9 @@ export default function ReviewsSection() {
           {reviews.map((review, index) => (
             <div
               key={index}
-              className={`p-10 rounded-2xl flex flex-col justify-between border border-outline-variant/10 ${
+              className={`p-8 sm:p-10 rounded-2xl flex flex-col justify-between border border-outline-variant/10 ${
                 index === 1
-                  ? 'bg-surface-container scale-105 shadow-2xl border-outline-variant/20'
+                  ? 'bg-surface-container md:scale-105 shadow-2xl border-outline-variant/20'
                   : 'bg-surface-container-low'
               }`}
             >

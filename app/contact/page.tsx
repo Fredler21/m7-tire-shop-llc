@@ -10,20 +10,20 @@ export default function ContactPage() {
       <Header />
 
       {/* Page Header */}
-      <div className="pt-40 pb-20 px-8 max-w-[1440px] mx-auto">
-        <span className="text-tertiary font-bold tracking-[0.2em] uppercase text-sm flex items-center gap-3 mb-8">
-          <span className="w-12 h-[2px] bg-tertiary inline-block"></span>
+      <div className="pt-28 sm:pt-40 pb-10 sm:pb-20 px-4 sm:px-8 max-w-[1440px] mx-auto">
+        <span className="text-tertiary font-bold tracking-[0.2em] uppercase text-xs sm:text-sm flex items-center gap-3 mb-6 sm:mb-8">
+          <span className="w-8 sm:w-12 h-[2px] bg-tertiary inline-block"></span>
           Get In Touch
         </span>
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight mb-6">CONTACT US</h1>
-        <p className="text-on-secondary-container text-xl max-w-2xl">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-tight mb-4 sm:mb-6">CONTACT US</h1>
+        <p className="text-on-secondary-container text-base sm:text-xl max-w-2xl">
           Have questions or need assistance? Our team is here to help.
         </p>
       </div>
 
-      <div className="pb-32 px-8 max-w-[1440px] mx-auto">
+      <div className="pb-16 sm:pb-32 px-4 sm:px-8 max-w-[1440px] mx-auto">
         {/* Contact Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-8 mb-12 sm:mb-20">
           {[
             { icon: 'call', title: 'Call Us', info: '(555) 123-4567', sub: 'Mon – Fri: 8AM – 6PM' },
             { icon: 'mail', title: 'Email Us', info: 'info@m7tireshop.com', sub: 'We reply within 24 hours' },
@@ -40,13 +40,13 @@ export default function ContactPage() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16">
           {/* Map */}
           <div>
-            <h2 className="text-3xl font-bold mb-8 uppercase tracking-tight">Find Us</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 uppercase tracking-tight">Find Us</h2>
             <div className="rounded-2xl overflow-hidden border border-outline-variant/20">
               <iframe
-                className="w-full h-96"
+                className="w-full h-64 sm:h-96"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.1234567890!2d-74.0060!3d40.7128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjAiTiA3NMKwMDAnMjEuNiJX!5e0!3m2!1sen!2sus!4v1234567890"
                 allowFullScreen={false}
                 loading="lazy"
@@ -68,8 +68,8 @@ export default function ContactPage() {
 
           {/* Contact Form */}
           <div>
-            <h2 className="text-3xl font-bold mb-8 uppercase tracking-tight">Send a Message</h2>
-            <div className="glass-card p-10 rounded-2xl">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 uppercase tracking-tight">Send a Message</h2>
+            <div className="glass-card p-6 sm:p-10 rounded-2xl">
               <ContactForm />
             </div>
           </div>

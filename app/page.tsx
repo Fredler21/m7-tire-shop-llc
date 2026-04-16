@@ -91,15 +91,15 @@ export default function Home() {
       <HeroSlider />
 
       {/* Services Grid */}
-      <section className="py-32 px-8 max-w-[1440px] mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+      <section className="py-16 sm:py-32 px-4 sm:px-8 max-w-[1440px] mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-10 sm:mb-20 gap-4 sm:gap-8">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">SPECIALIZED CARE</h2>
-            <p className="text-on-secondary-container max-w-md text-lg">Comprehensive automotive solutions for all your vehicle needs.</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 tracking-tight">SPECIALIZED CARE</h2>
+            <p className="text-on-secondary-container max-w-md text-base sm:text-lg">Comprehensive automotive solutions for all your vehicle needs.</p>
           </div>
           <div className="h-1 w-24 bg-tertiary mb-4 hidden md:block"></div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8 mb-10 sm:mb-12">
           {FEATURED_SERVICES.map((service) => (
             <ServiceCard
               key={service.id}
@@ -115,7 +115,7 @@ export default function Home() {
         <div className="text-center">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 border border-tertiary/40 hover:border-tertiary text-tertiary font-bold px-8 py-4 rounded-full tracking-widest uppercase text-sm transition-all hover:bg-tertiary/5"
+            className="inline-flex items-center gap-2 border border-tertiary/40 hover:border-tertiary text-tertiary font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full tracking-widest uppercase text-sm transition-all hover:bg-tertiary/5"
           >
             View All Services <span className="material-symbols-outlined text-lg">arrow_forward</span>
           </Link>
@@ -123,25 +123,25 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us + How It Works */}
-      <section className="py-32 bg-surface-container-lowest">
-        <div className="max-w-[1440px] mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-24">
+      <section className="py-16 sm:py-32 bg-surface-container-lowest">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-24">
           {/* Why Choose Us */}
           <div>
-            <h2 className="text-4xl font-bold mb-16 tracking-tight">ENGINEERED TRUST</h2>
-            <div className="space-y-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-10 sm:mb-16 tracking-tight">ENGINEERED TRUST</h2>
+            <div className="space-y-8 sm:space-y-12">
               {[
                 { icon: 'verified', title: 'Certified Mechanics', desc: 'ASE-Master technicians with decades of collective automotive experience.' },
                 { icon: 'speed', title: 'Fast Service', desc: 'Optimized workflow to ensure your vehicle is back on the road swiftly.' },
                 { icon: 'monetization_on', title: 'Transparent Pricing', desc: 'Detailed estimates with itemized labor and parts breakdown — no hidden fees.' },
                 { icon: 'security', title: 'Warranty Guaranteed', desc: '12-month / 12,000-mile warranty on all parts and labor performed.' },
               ].map((item) => (
-                <div key={item.icon} className="flex gap-6 group">
-                  <div className="w-16 h-16 rounded-2xl glass-card flex items-center justify-center text-tertiary shrink-0 transition-transform group-hover:scale-110">
-                    <span className="material-symbols-outlined text-3xl">{item.icon}</span>
+                <div key={item.icon} className="flex gap-4 sm:gap-6 group">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl glass-card flex items-center justify-center text-tertiary shrink-0 transition-transform group-hover:scale-110">
+                    <span className="material-symbols-outlined text-2xl sm:text-3xl">{item.icon}</span>
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold mb-2">{item.title}</h4>
-                    <p className="text-on-secondary-container">{item.desc}</p>
+                    <h4 className="text-lg sm:text-xl font-bold mb-2">{item.title}</h4>
+                    <p className="text-on-secondary-container text-sm sm:text-base">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -149,23 +149,23 @@ export default function Home() {
           </div>
 
           {/* How It Works */}
-          <div className="bg-surface-container p-12 rounded-2xl relative overflow-hidden">
-            <h2 className="text-4xl font-bold mb-16 tracking-tight">PROCESS FLOW</h2>
-            <div className="relative space-y-16">
+          <div className="bg-surface-container p-8 sm:p-12 rounded-2xl relative overflow-hidden">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-10 sm:mb-16 tracking-tight">PROCESS FLOW</h2>
+            <div className="relative space-y-12 sm:space-y-16">
               <div className="absolute left-7 top-4 bottom-4 w-[2px] bg-gradient-to-b from-tertiary to-transparent opacity-20"></div>
               {[
                 { step: 1, title: 'Choose Service', desc: 'Select from our maintenance or repair packages online or over the phone.', icon: 'list_alt' },
                 { step: 2, title: 'Book Appointment', desc: 'Secure your slot in our calendar with a seamless digital booking process.', icon: 'event_available' },
                 { step: 3, title: 'Get Your Car Fixed', desc: 'Experience professional execution and drive away with total confidence.', icon: 'car_repair' },
               ].map((item) => (
-                <div key={item.step} className="relative flex gap-8">
-                  <div className="w-14 h-14 rounded-full bg-surface-container-highest border border-tertiary/30 flex items-center justify-center text-tertiary font-bold text-xl z-10 shrink-0">
+                <div key={item.step} className="relative flex gap-6 sm:gap-8">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-surface-container-highest border border-tertiary/30 flex items-center justify-center text-tertiary font-bold text-lg sm:text-xl z-10 shrink-0">
                     {item.step}
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold mb-2 uppercase">{item.title}</h4>
-                    <p className="text-on-secondary-container">{item.desc}</p>
-                    <span className="material-symbols-outlined text-4xl text-on-primary-container mt-4 opacity-50 block">{item.icon}</span>
+                    <h4 className="text-lg sm:text-xl font-bold mb-2 uppercase">{item.title}</h4>
+                    <p className="text-on-secondary-container text-sm sm:text-base">{item.desc}</p>
+                    <span className="material-symbols-outlined text-3xl sm:text-4xl text-on-primary-container mt-4 opacity-50 block">{item.icon}</span>
                   </div>
                 </div>
               ))}
@@ -175,16 +175,16 @@ export default function Home() {
       </section>
 
       {/* Booking CTA */}
-      <section className="py-24 px-8 max-w-[1440px] mx-auto">
-        <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-surface-container-high to-surface-container p-12 md:p-20 border border-outline-variant/10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <section className="py-16 sm:py-24 px-4 sm:px-8 max-w-[1440px] mx-auto">
+        <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-surface-container-high to-surface-container p-6 sm:p-12 md:p-20 border border-outline-variant/10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 items-center">
             <div>
-              <h2 className="text-5xl font-bold mb-6 tracking-tight leading-tight">Book your service in minutes.</h2>
-              <p className="text-on-secondary-container text-xl max-w-md">
+              <h2 className="text-3xl sm:text-5xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight">Book your service in minutes.</h2>
+              <p className="text-on-secondary-container text-base sm:text-xl max-w-md">
                 Our team is ready to get your vehicle back in top shape. Schedule your appointment today.
               </p>
             </div>
-            <div className="glass-card p-10 rounded-2xl">
+            <div className="glass-card p-6 sm:p-10 rounded-2xl">
               <QuickBookForm />
             </div>
           </div>

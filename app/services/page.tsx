@@ -19,22 +19,22 @@ export default function ServicesPage() {
       <Header />
 
       {/* Page Header */}
-      <div className="pt-40 pb-20 px-8 max-w-[1440px] mx-auto">
-        <span className="text-tertiary font-bold tracking-[0.2em] uppercase text-sm flex items-center gap-3 mb-8">
-          <span className="w-12 h-[2px] bg-tertiary inline-block"></span>
+      <div className="pt-28 sm:pt-40 pb-10 sm:pb-20 px-4 sm:px-8 max-w-[1440px] mx-auto">
+        <span className="text-tertiary font-bold tracking-[0.2em] uppercase text-xs sm:text-sm flex items-center gap-3 mb-6 sm:mb-8">
+          <span className="w-8 sm:w-12 h-[2px] bg-tertiary inline-block"></span>
           What We Offer
         </span>
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight mb-6">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-tight mb-4 sm:mb-6">
           SPECIALIZED CARE
         </h1>
-        <p className="text-on-secondary-container text-xl max-w-2xl">
+        <p className="text-on-secondary-container text-base sm:text-xl max-w-2xl">
           Comprehensive automotive solutions for all makes and models, executed by expert technicians using modern equipment.
         </p>
       </div>
 
       {/* Services Grid */}
-      <section className="pb-32 px-8 max-w-[1440px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="pb-16 sm:pb-32 px-4 sm:px-8 max-w-[1440px] mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
           {services.map((service) => (
             <ServiceCard
               key={service.id}
@@ -50,8 +50,8 @@ export default function ServicesPage() {
       </section>
 
       {/* Info strip */}
-      <section className="py-16 bg-surface-container-lowest">
-        <div className="max-w-[1440px] mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+      <section className="py-12 sm:py-16 bg-surface-container-lowest">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 grid grid-cols-3 gap-4 sm:gap-12 text-center">
           {[
             { icon: 'schedule', title: 'Mon – Fri', desc: '8:00 AM – 6:00 PM' },
             { icon: 'schedule', title: 'Saturday', desc: '9:00 AM – 4:00 PM' },
