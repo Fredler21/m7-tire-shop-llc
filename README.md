@@ -125,8 +125,6 @@ Deploy instantly on Vercel (recommended). Connect the GitHub repository and it d
 - 🧾 Online estimates
 - 👤 Customer accounts
 
-See [prd.md](./prd.md) for the full product roadmap.
-
 ---
 
 ## � License
