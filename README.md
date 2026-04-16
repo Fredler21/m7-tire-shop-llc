@@ -129,20 +129,9 @@ See [prd.md](./prd.md) for the full product roadmap.
 
 ---
 
-## 📄 Licenses
+## � License
 
-This project includes multiple license files to cover different use cases. Choose the one that fits how you plan to use or build on this work.
+This project is **proprietary and private**. All rights reserved by M7 Tire Shop LLC.
 
-| File | Name | Best For |
-|---|---|---|
-| [LICENSE](./LICENSE) | ⚖️ MIT License | General use — the standard "copied from the internet" license. Free to use, modify, and distribute with credit. |
-| [LICENSE-VIBE](./LICENSE-VIBE) | 🎵 Vibe Coding License | AI-assisted and creative projects. Informal, fun, and community-friendly. Built with good energy. |
-| [LICENSE-WEBDEV](./LICENSE-WEBDEV) | 🌐 Web Developer Public License | Web projects — allows reuse of components and styles with proper credit and attribution. |
-| [LICENSE-STRONG](./LICENSE-STRONG) | 🔒 GNU GPL v3 (Strong Copyleft) | Maximum protection. Any derivative must also be open source under the same terms. No proprietary forks allowed. |
-
-### Which one applies to this project?
-
-The main codebase is released under the **MIT License** ([LICENSE](./LICENSE)). The other license files are provided as references for contributors and developers who wish to use parts of this project in contexts with different requirements.
-
-> ⚠️ The M7 Tire Shop LLC name, branding, and business identity are **not** covered by any open-source license and may not be reused without explicit permission.
+No permission is granted to copy, use, modify, or distribute this code without explicit written authorization. See [LICENSE](./LICENSE) for full terms.
 
