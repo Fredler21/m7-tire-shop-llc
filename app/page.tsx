@@ -10,12 +10,12 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 const FEATURED_SERVICES = [
-  { id: '1', name: 'Oil Change', description: 'Synthetic and specialized oil services using premium filters for engine longevity.', startingPrice: 45, icon: 'oil_barrel' },
-  { id: '2', name: 'Tire Services', description: 'Precision balancing, rotation, and high-performance tire fitment for ultimate grip.', startingPrice: 60, icon: 'tire_repair' },
-  { id: '3', name: 'Brake Repair', description: 'Ceramic and composite pad replacement with full rotor resurfacing available.', startingPrice: 150, icon: 'car_repair' },
-  { id: '4', name: 'Engine Diagnostics', description: 'Advanced electronic scans and full system telemetry for modern engine modules.', startingPrice: 85, icon: 'settings_suggest' },
-  { id: '5', name: 'Battery Replacement', description: 'Load testing, terminal cleaning, and replacement of OEM grade electrical units.', startingPrice: 50, icon: 'battery_charging_full' },
-  { id: '6', name: 'Body Shop', description: 'Precision panel work and factory-spec paint matching for structural integrity.', startingPrice: 200, icon: 'build' },
+  { id: '1', name: 'Oil Change', description: 'Synthetic and specialized oil services using premium filters for engine longevity.', startingPrice: 45, icon: 'oil_barrel', image: '/images/hero-oil-change.png' },
+  { id: '2', name: 'Tire Services', description: 'Precision balancing, rotation, and high-performance tire fitment for ultimate grip.', startingPrice: 60, icon: 'tire_repair', image: '/images/hero-tire-services.png' },
+  { id: '3', name: 'Brake Repair', description: 'Ceramic and composite pad replacement with full rotor resurfacing available.', startingPrice: 150, icon: 'car_repair', image: '/images/hero-car-repair.png' },
+  { id: '4', name: 'Engine Diagnostics', description: 'Advanced electronic scans and full system telemetry for modern engine modules.', startingPrice: 85, icon: 'settings_suggest', image: '/images/hero-engine-diagnostics.png' },
+  { id: '5', name: 'Battery Replacement', description: 'Load testing, terminal cleaning, and replacement of OEM grade electrical units.', startingPrice: 50, icon: 'battery_charging_full', image: '/images/hero-battery-replacement.png' },
+  { id: '6', name: 'Body Shop', description: 'Precision panel work and factory-spec paint matching for structural integrity.', startingPrice: 200, icon: 'build', image: '/images/hero-body-shop.png' },
 ];
 
 function QuickBookForm() {
@@ -108,6 +108,7 @@ export default function Home() {
               description={service.description}
               startingPrice={service.startingPrice}
               icon={service.icon}
+              image={service.image}
             />
           ))}
         </div>
