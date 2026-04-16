@@ -1,140 +1,52 @@
-# 🛠️ M7 Tire Shop LLC - Website V1
+# 🛞 M7 Tire Shop LLC — Website
 
-Professional automotive services website built with modern web technologies.
-
-## 🎯 Overview
-
-M7 Tire Shop LLC is a full-featured website for a professional mechanical shop, enabling customers to:
-- Browse services and pricing
-- Book appointments online
-- Get estimates
-- Contact the shop
-- Read customer reviews
-
-This is **Version 1 (MVP)** of a 3-phase product roadmap. See [prd.md](./prd.md) for the complete product roadmap.
+The official website for M7 Tire Shop LLC — a professional automotive shop where customers can explore services, book appointments, and get in touch with the team.
 
 ---
 
-## ✨ Features
+## 🌟 What's on the Site
 
 ### 🏠 Homepage
-- Eye-catching hero section with call-to-action
-- Featured services preview
-- "Why Choose Us" section with benefits
-- Customer reviews carousel
-- Email newsletter signup area
+- Full-screen image slider showcasing our services
+- Services preview with grayscale-to-color hover/touch effect
+- "Why Choose Us" highlights and a 3-step process flow
+- Quick booking form
+- Customer reviews
 
 ### 🔧 Services Page
-Complete service catalog with:
-- Oil Change ($45+)
-- Tire Services ($60+)
-- Brake Repair ($150+)
-- Engine Diagnostics ($85+)
-- Battery Replacement ($50+)
-- Body Shop ($200+)
+Browse all 6 services — each card links to a full detail page:
+- 🛢️ Oil Change — from $45
+- 🔄 Tire Services — from $60
+- 🛑 Brake Repair — from $150
+- 🔍 Engine Diagnostics — from $85
+- 🔋 Battery Replacement — from $50
+- 🎨 Body Shop — from $200
 
-Each service includes:
-- Professional 4K images (from Unsplash)
-- Description
-- Starting price
-- Direct booking link
+Each detail page includes a description, what's included, duration, warranty, FAQs, and a direct booking button.
 
-### 📅 Booking System
-Simple appointment booking with:
-- Service selection
-- Date and time picker
-- Customer information form
-- Additional notes field
-- Confirmation notifications
+### 📅 Booking Page
+Fill out a quick form to schedule your appointment. Pick a service, date, time, and your contact info — we confirm within 24 hours.
 
 ### 📞 Contact Page
-Multiple contact methods:
-- Phone number
-- Email address
-- Physical location with Google Maps embed
-- Contact form
-- Business hours
+Reach us by phone, email, or the contact form. Includes a map and business hours.
 
-### ⭐ Reviews Section
-- Customer testimonials carousel
-- 5-star ratings
-- Auto-rotating reviews
-- Navigation controls
+---
+
+## 🎨 Design
+
+- 🌑 Dark navy theme with cyan accent color
+- 📱 Fully responsive — works on phones, tablets, and desktop
+- ✨ Premium service card effect: grayscale → full color on touch/hover
+- 🪟 Glass-morphism cards and overlays throughout
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: Next.js 16.2.4 with TypeScript and App Router
-- **Styling**: Tailwind CSS
-- **Components**: React 19 with custom components
-- **Notifications**: React Hot Toast
-- **Carousel**: Swiper.js
-- **API Integration**: Gemini API (for future AI features)
-- **Environment**: Node.js with npm
-
----
-
-## 📦 Installation
-
-### Prerequisites
-- Node.js 18+
-- npm or yarn
-
-### Setup
-
-1. **Clone the repository**
-```bash
-git clone https://github.com/Fredler21/m7-tire-shop-llc.git
-cd m7-tire-shop-llc
-```
-
-2. **Install dependencies**
-```bash
-npm install
-```
-
-3. **Configure environment variables**
-
-Create `.env.local` file:
-```env
-NEXT_PUBLIC_GEMINI_API_KEY=your_gemini_api_key
-NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
-```
-
-4. **Run development server**
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
----
-
-## 🚀 Deployment
-
-### Deploy to Vercel (Recommended)
-
-```bash
-npm install -g vercel
-vercel
-```
-
-Follow the prompts to connect your GitHub repository and deploy.
-
-### Docker Deployment
-
-```bash
-docker build -t m7-tire-shop .
-docker run -p 3000:3000 m7-tire-shop
-```
-
-### Manual Deployment
-
-```bash
-npm run build
-npm start
-```
+- ⚡ **Next.js 16** with TypeScript and App Router
+- 🎨 **Tailwind CSS v4** for styling
+- ⚛️ **React 19** with custom components
+- 🤖 **Google Gemini API** for AI-generated images
 
 ---
 
@@ -149,225 +61,88 @@ m7-tire-shop-llc/
 │   ├── components/
 │   │   ├── Header.tsx              # Navigation header
 │   │   ├── Footer.tsx              # Footer
-│   │   ├── ServiceCard.tsx         # Service display card
-│   │   ├── BookingForm.tsx         # Booking form component
-│   │   ├── ContactForm.tsx         # Contact form component
-│   │   └── ReviewsSection.tsx      # Reviews carousel
+│   │   ├── HeroSlider.tsx          # Homepage image slider
+│   │   ├── ServiceCard.tsx         # Service card with color reveal
+│   │   ├── BookingForm.tsx         # Booking form
+│   │   ├── ContactForm.tsx         # Contact form
+│   │   └── ReviewsSection.tsx      # Customer reviews
+│   ├── services/
+│   │   ├── page.tsx                # Services listing page
+│   │   └── [id]/page.tsx           # Individual service detail page
 │   ├── booking/page.tsx            # Booking page
 │   ├── contact/page.tsx            # Contact page
-│   ├── services/page.tsx           # Services page
 │   ├── page.tsx                    # Home page
 │   ├── layout.tsx                  # Root layout
 │   └── globals.css                 # Global styles
 ├── lib/
-│   ├── types.ts                    # TypeScript interfaces
+│   ├── services-data.ts            # All service content (shared)
+│   ├── types.ts                    # TypeScript types
 │   └── gemini.ts                   # Gemini API utilities
 ├── public/
-│   └── images/                     # Static images
-├── .env.local                      # Environment variables
-├── next.config.ts                  # Next.js configuration
-├── tailwind.config.ts              # Tailwind configuration
-├── tsconfig.json                   # TypeScript configuration
-└── package.json                    # Dependencies
+│   └── images/                     # Service images
+└── package.json
 ```
 
 ---
 
-## 🎨 Design
+## 💻 Running Locally
 
-- **Color Scheme**: Dark theme (Gray-900 background) with Orange accent (#F97316)
-- **Responsive**: Mobile-first design, fully responsive on all devices
-- **Performance**: Optimized images, lazy loading, fast load times
-- **Accessibility**: Semantic HTML, proper contrast ratios
-
----
-
-## 🔄 Booking Flow
-
-1. User clicks "Book Now" button
-2. Selects service from dropdown
-3. Chooses date (tomorrow or later)
-4. Selects available time slot
-5. Enters personal information
-6. Adds optional notes
-7. Submits booking
-8. Receives confirmation toast notification
-9. Email confirmation sent (future integration)
-
----
-
-## 📧 Contact Form Flow
-
-1. User fills out contact form
-2. Provides name, email, phone, subject, message
-3. Submits form
-4. Receives success notification
-5. Backend sends email notification (future integration)
-
----
-
-## 🔐 Security
-
-- Environment variables for sensitive data
-- Input validation on forms
-- CORS-ready API endpoints
-- No exposed API keys in client code
-
----
-
-## 📊 API Endpoints
-
-### POST /api/bookings
-Create a new appointment booking.
-
-**Request:**
-```json
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "phone": "(555) 123-4567",
-  "carModel": "Honda Civic",
-  "service": "Oil Change",
-  "date": "2024-12-25",
-  "time": "10:00 AM",
-  "notes": "Check for oil leak"
-}
-```
-
-**Response:**
-```json
-{
-  "id": "1703534400000",
-  "status": "pending",
-  "createdAt": "2024-12-25T10:00:00Z",
-  ...
-}
-```
-
-### POST /api/contact
-Send a contact message.
-
-**Request:**
-```json
-{
-  "name": "Jane Smith",
-  "email": "jane@example.com",
-  "phone": "(555) 987-6543",
-  "subject": "Question about services",
-  "message": "Do you offer..."
-}
-```
-
-**Response:**
-```json
-{
-  "message": "Message received. We will contact you soon."
-}
-```
-
----
-
-## 🚀 V2 Roadmap (Coming Soon)
-
-- Customer dashboard
-- Live booking availability
-- Service status tracking
-- Admin dashboard
-- Email notifications
-- SMS reminders (Twilio integration)
-- Online estimates
-
-See [prd.md](./prd.md) for complete roadmap and future plans.
-
----
-
-## 💡 Features to Add
-
-### Immediate (Before V2)
-- [ ] Email confirmation integration
-- [ ] SMS notifications
-- [ ] Google Analytics
-- [ ] SEO optimization
-- [ ] Sitemap/robots.txt
-- [ ] Privacy policy page
-- [ ] Terms of service page
-
-### V2 Features
-- [ ] Customer accounts
-- [ ] Booking history
-- [ ] Real-time availability
-- [ ] Payment integration (Stripe)
-- [ ] Email reminders
-
-### V3 Features
-- [ ] AI diagnostics assistant
-- [ ] Photo-based estimates
-- [ ] Multi-service bundles
-- [ ] Loyalty program
-- [ ] Fleet management
-- [ ] Blog/SEO content
-
----
-
-## 📱 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
----
-
-## 📝 Scripts
+**Prerequisites:** Node.js 18+
 
 ```bash
-# Development
-npm run dev          # Start development server
+# Install dependencies
+npm install
 
-# Production
-npm run build        # Build for production
-npm start            # Start production server
-
-# Code quality
-npm run lint         # Run ESLint
-npm run format       # Format with Prettier (if configured)
+# Start the dev server
+npm run dev
 ```
 
----
-
-## 🤝 Contributing
-
-1. Create a feature branch
-2. Make your changes
-3. Test thoroughly
-4. Submit a pull request
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## 📄 License
+## 🚀 Deployment
 
-Private project for M7 Tire Shop LLC
-
----
-
-## 📧 Support
-
-**Email**: info@m7tirshop.com  
-**Phone**: (555) 123-4567  
-**Address**: 123 Main Street, City, State 12345
+Deploy instantly on Vercel (recommended). Connect the GitHub repository and it deploys automatically on every push to `main`.
 
 ---
 
-## 🙏 Credits
+## 🗺️ Booking Flow
 
-- Unsplash for high-quality automotive images
-- Next.js and Vercel for fantastic framework
-- Tailwind CSS for utility-first styling
-- React community for amazing tools and libraries
+1. 🖱️ Click **Book Appointment** anywhere on the site
+2. 🔧 Select your service
+3. 📅 Pick a date and time
+4. 📝 Enter your name, phone, email, and car model
+5. ✅ Submit — we confirm within 24 hours
 
 ---
 
-**Version**: 1.0.0  
-**Last Updated**: April 2024  
-**Status**: ✅ Production Ready
+## 🔮 Coming Soon (V2)
+
+- 📊 Admin dashboard
+- 📬 Email and SMS confirmations
+- 🗓️ Live availability calendar
+- 🧾 Online estimates
+- 👤 Customer accounts
+
+See [prd.md](./prd.md) for the full product roadmap.
+
+---
+
+## 📄 Licenses
+
+This project includes multiple license files to cover different use cases. Choose the one that fits how you plan to use or build on this work.
+
+| File | Name | Best For |
+|---|---|---|
+| [LICENSE](./LICENSE) | ⚖️ MIT License | General use — the standard "copied from the internet" license. Free to use, modify, and distribute with credit. |
+| [LICENSE-VIBE](./LICENSE-VIBE) | 🎵 Vibe Coding License | AI-assisted and creative projects. Informal, fun, and community-friendly. Built with good energy. |
+| [LICENSE-WEBDEV](./LICENSE-WEBDEV) | 🌐 Web Developer Public License | Web projects — allows reuse of components and styles with proper credit and attribution. |
+| [LICENSE-STRONG](./LICENSE-STRONG) | 🔒 GNU GPL v3 (Strong Copyleft) | Maximum protection. Any derivative must also be open source under the same terms. No proprietary forks allowed. |
+
+### Which one applies to this project?
+
+The main codebase is released under the **MIT License** ([LICENSE](./LICENSE)). The other license files are provided as references for contributors and developers who wish to use parts of this project in contexts with different requirements.
+
+> ⚠️ The M7 Tire Shop LLC name, branding, and business identity are **not** covered by any open-source license and may not be reused without explicit permission.
+
