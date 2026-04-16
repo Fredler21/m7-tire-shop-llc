@@ -3,15 +3,9 @@
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import ServiceCard from '@/app/components/ServiceCard';
+import { SERVICES } from '@/lib/services-data';
 
-const services = [
-  { id: '1', name: 'Oil Change', description: 'Synthetic and specialized oil services using premium filters for engine longevity. Includes fluid level check.', startingPrice: 45, icon: 'oil_barrel', image: '/images/hero-oil-change.png', category: 'maintenance' },
-  { id: '2', name: 'Tire Services', description: 'Precision balancing, rotation, patching, and high-performance tire fitment for ultimate grip and safety.', startingPrice: 60, icon: 'tire_repair', image: '/images/hero-tire-services.png', category: 'tires' },
-  { id: '3', name: 'Brake Repair', description: 'Ceramic and composite pad replacement with full rotor resurfacing and brake fluid flush available.', startingPrice: 150, icon: 'car_repair', image: '/images/hero-car-repair.png', category: 'repair' },
-  { id: '4', name: 'Engine Diagnostics', description: 'Advanced electronic scans and full system telemetry for modern engine modules and fault code analysis.', startingPrice: 85, icon: 'settings_suggest', image: '/images/hero-engine-diagnostics.png', category: 'diagnostics' },
-  { id: '5', name: 'Battery Replacement', description: 'Load testing, terminal cleaning, and replacement of OEM grade electrical units with warranty included.', startingPrice: 50, icon: 'battery_charging_full', image: '/images/hero-battery-replacement.png', category: 'parts' },
-  { id: '6', name: 'Body Shop', description: 'Precision panel work and factory-spec paint matching for structural integrity and showroom finish.', startingPrice: 200, icon: 'build', image: '/images/hero-body-shop.png', category: 'body' },
-];
+const services = SERVICES;
 
 export default function ServicesPage() {
   return (

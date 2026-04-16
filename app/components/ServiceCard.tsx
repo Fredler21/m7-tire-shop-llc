@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 interface ServiceCardProps {
@@ -21,12 +22,18 @@ export default function ServiceCard({
   image,
 }: ServiceCardProps) {
   const [isActive, setIsActive] = useState(false);
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push(`/services/${id}`);
+  };
 
   return (
     <div
       className={`relative rounded-2xl overflow-hidden border transition-all duration-500 cursor-pointer ${
         isActive ? 'border-tertiary/30' : 'border-outline-variant/10'
       }`}
+      onClick={handleClick}
       onMouseEnter={() => setIsActive(true)}
       onMouseLeave={() => setIsActive(false)}
       onTouchStart={() => setIsActive(true)}
@@ -91,11 +98,11 @@ export default function ServiceCard({
             <span className="text-tertiary font-bold ml-1">${startingPrice}</span>
           </span>
           <Link
-            href={`/booking?service=${encodeURIComponent(name)}`}
-            className="flex items-center gap-1 text-tertiary font-bold tracking-wider uppercase text-xs
-                       hover:translate-x-1 transition-transform duration-300"
+            href={`/services/${id}`}
+            onClick={(e) => e.stopPropagation()}
+            className="flex items-center gap-1 text-tertiary font-bold tracking-wider uppercase text-xs"
           >
-            Book Now
+            View Details
             <span className="material-symbols-outlined text-base">arrow_forward</span>
           </Link>
         </div>
